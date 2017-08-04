@@ -147,14 +147,15 @@ bool mpu6050_init()
     bool error;
 		ret_code_t err_code;
 		const nrf_drv_twi_config_t twi_config = {
-			 /*
-			 .scl                = scl_pin,
-			 .sda                = sda_pin,
-				*/
-				.scl                = 0,
-				.sda                = 1,
-				.frequency          = NRF_TWI_FREQ_100K,
-				.interrupt_priority = 1
+#if 0 
+			.scl                = 0,
+			.sda                = 1,
+#else
+            .scl                = 0,
+            .sda                = 1,
+#endif
+			.frequency          = NRF_TWI_FREQ_100K,
+			.interrupt_priority = 1
 		};
 
 		err_code = nrf_drv_twi_init(&m_twi, &twi_config, NULL, NULL);
