@@ -75,3 +75,4 @@ void ssd1306_putString(char *str);
 void ssd1306_putNumber(long);
 void ssd1306_drawBitmap(uint16_t x,uint16_t y, uint16_t width,uint16_t height, uint8_t *bmp);
 void ssd1306_smallNumber(uint16_t x, uint16_t y, int16_t num);
+void UpdateUI(uint8_t step_status,uint16_t step_count);

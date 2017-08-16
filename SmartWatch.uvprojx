@@ -333,7 +333,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>BOARD_CUSTOM S130 GPIOTE_ENABLED S130 BLE_STACK_SUPPORT_REQD NRF51822 BOARD_PCA10028 S130 NRF_SD_BLE_API_VERSION=2 NRF51 SOFTDEVICE_PRESENT</Define>
+              <Define>BOARD_CUSTOM S130 GPIOTE_ENABLED S130 BLE_STACK_SUPPORT_REQD NRF51822 BOARD_PCA10028 S130 NRF_SD_BLE_API_VERSION=2 NRF51 SOFTDEVICE_PRESENT TIMER0_ENABLED</Define>
               <Undefine></Undefine>
               <IncludePath>..\keil_source</IncludePath>
             </VariousControls>
@@ -398,6 +398,11 @@
               <FileName>ssd1306.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\ssd1306.c</FilePath>
+            </File>
+            <File>
+              <FileName>pedometer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pedometer.c</FilePath>
             </File>
           </Files>
         </Group>

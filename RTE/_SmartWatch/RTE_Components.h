@@ -24,5 +24,6 @@
 #define SOFTDEVICE_PRESENT
 #define SWI_DISABLE0
 #define UART0_ENABLED
+#define TIMER0_ENABLED
 
 #endif /* RTE_COMPONENTS_H */

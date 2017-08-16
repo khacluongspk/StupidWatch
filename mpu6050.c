@@ -151,8 +151,8 @@ bool mpu6050_init()
 			.scl                = 0,
 			.sda                = 1,
 #else
-            .scl                = 0,
-            .sda                = 1,
+            .scl                = 5,
+            .sda                = 6,
 #endif
 			.frequency          = NRF_TWI_FREQ_100K,
 			.interrupt_priority = 1
@@ -206,4 +206,16 @@ void mpu6050_convertAcc(float *x, float *y, float *z){
     *y = acc_y;
     *z = acc_z;
 
+}
+
+void mpu6050_readXYZ(int16_t *x, int16_t *y, int16_t *z)
+{
+    uint8_t buff[6];
+    twi_readBytes(MPU6050_ADDRESS,MPU6050_RA_ACCEL_XOUT_H, 6, buff);
+    raw_acc_x = (int16_t)((buff[0] << 8) | buff[1]);
+    raw_acc_y = (int16_t)((buff[2] << 8) | buff[3]);
+    raw_acc_z = (int16_t)((buff[4] << 8) | buff[5]);
+    *x = raw_acc_x  /1638;
+    *y = raw_acc_y  /1638;
+    *z = raw_acc_z  /1638;
 }

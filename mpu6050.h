@@ -149,5 +149,6 @@ bool twi_writeBits(uint8_t slaveAddr, uint8_t regAddr, uint8_t bitStart, uint8_t
 bool mpu6050_init(void);
 void mpu6050_readAccelerometer(int16_t *x, int16_t *y, int16_t *z);
 void mpu6050_convertAcc(float *x, float *y, float *z);
+void mpu6050_readXYZ(int16_t *x, int16_t *y, int16_t *z);
 
 #endif // __MPU6050_H_ 
